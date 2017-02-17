@@ -23,7 +23,7 @@
     </div>
     <!-- End Top Bar -->
 
-    <div class="callout primary">
+    <div class="callout primary search-bar">
       <div class="row">
         <div class="column medium-2 text-right">
           <p>Search route</p>
@@ -45,8 +45,11 @@
     </div>
     
     <div class="row" id="content">
-      <div class="columns">
-        <table class="hover stack small-12">
+
+      <div class="columns medium-8">
+        <p>Search any routes...</p>
+
+        <table class="hover stack result-table hide">
           <thead>
           <tr>
             <th>Riga</th>
@@ -157,6 +160,17 @@
           </tbody>
         </table>
       </div>
+
+      <div class="medium-3 columns station-list" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content">
+          <h4>Available Stations</h4>
+          <ul>
+            <li>Riga</li>
+            <li>Jurmala</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
     
     <script src="/assets/js/libs/jquery-2.1.4.min.js"></script>

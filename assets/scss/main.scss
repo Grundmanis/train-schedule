@@ -1,0 +1,26 @@
+.search-bar {
+  input, button, p {
+    margin-bottom:0;
+  }
+  p {
+    padding-top:7px;
+    font-weight: bold;
+  }
+}
+
+#content {
+  p {
+    color: #ccc;
+    text-align: center;
+    margin-top:100px;
+    font-size:50px;
+  }
+
+  .station-list {
+    li {
+      text-align: right;
+      color: #999;
+      list-style-type: none;
+    }
+  }
+}
