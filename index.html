@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/assets/css/libs/foundation.min.css">
     <link rel="stylesheet" href="/assets/css/main.min.css">
   </head>
-  <body>
+  <body ng-app="routeSearch" ng-controller="SearchRouteController" ng-cloak>
 
   <!-- Angular Libraries -->
-  <script src="/assets/js/libs/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   <script src="/assets/js/libs/angular-route.min.js"></script>
     
     <!-- Start Top Bar -->
@@ -30,23 +30,37 @@
         </div>
         <div class="column medium-3">
           <label>
-            <input placeholder="From" type="text" name="from">
+            <input autocomplete="off" ng-model="from" placeholder="From" type="text" name="from">
+              <ul class="input-dropdown" ng-show="from">
+                <li ng-repeat="i in stations | searchFor:from">
+                  <p ng-click="setFrom(i.name)">{{i.name}}</p>
+                </li>
+              </ul>
           </label>
         </div>
         <div class="column medium-3">
           <label>
-            <input placeholder="To" type="text" name="from">
+            <input autocomplete="off" ng-model="to" placeholder="To" type="text" name="to">
+            <ul class="input-dropdown" ng-show="to">
+              <li ng-repeat="i in stations | searchFor:to">
+                <p ng-click="setTo(i.name)">{{i.name}}</p>
+              </li>
+            </ul>
           </label>
         </div>
         <div class="column medium-4">
           <button class="button">Search</button>
         </div>
+        <span ng-show="from || to">
+          Route from {{from}} to {{to}}
+        </span>
       </div>
     </div>
     
     <div class="row" id="content">
 
       <div class="columns medium-8">
+
         <p>Search any routes...</p>
 
         <table class="hover stack result-table hide">
