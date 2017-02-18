@@ -51,9 +51,12 @@
         <div class="column medium-4">
           <button class="button">Search</button>
         </div>
-        <span ng-show="from || to">
-          Route from {{from}} to {{to}}
-        </span>
+        <div class="column medium-12 text-center">
+          <br>
+          <span ng-show="from || to">
+            Route from {{from}} to {{to}}
+          </span>
+        </div>
       </div>
     </div>
     
@@ -179,8 +182,7 @@
         <div class="sticky" data-sticky data-anchor="content">
           <h4>Available Stations</h4>
           <ul>
-            <li>Riga</li>
-            <li>Jurmala</li>
+            <li ng-repeat="i in stations ">{{i.name}}</li>
           </ul>
         </div>
       </div>

@@ -42,10 +42,15 @@
   }
 
   .station-list {
-    li {
-      text-align: right;
-      color: #999;
-      list-style-type: none;
+    ul {
+      max-height:300px;
+      overflow: auto;
+
+      li {
+        color: #999;
+        list-style-type: none;
+        display: block;
+      }
     }
   }
 }

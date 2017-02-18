@@ -25,6 +25,10 @@ app.filter('searchFor', function(){
 
         });
 
+        if (result.length == 1 && searchString.toLowerCase() == result[0].name.toLowerCase()) {
+            return null;
+        }
+
         return result;
     };
 
