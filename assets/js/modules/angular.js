@@ -100,5 +100,4 @@ function SearchRouteController($scope) {
             name: 'Riga'
         }
     ];
-
 }
